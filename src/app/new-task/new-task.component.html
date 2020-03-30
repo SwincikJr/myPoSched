@@ -1,0 +1,28 @@
+<div>
+    <po-button
+        p-icon="po-icon po-icon-plus"
+        p-label="Nova Tarefa"
+        (p-click)="openForm()">
+    </po-button>
+</div>
+
+<po-modal
+    p-click-out="true"
+    p-title="Nova Tarefa"
+    [p-primary-action]="poModalPrimaryAction">
+    <po-dynamic-form
+        [p-fields]="formFields"
+        [p-value]="newTask" >
+    </po-dynamic-form>
+</po-modal>
+
+<!--
+
+<po-dynamic-form
+    [p-fields]="formFields"
+    [p-value]="newTask" >
+</po-dynamic-form>
+
+
+-->
+

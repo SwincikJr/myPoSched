@@ -1,0 +1,47 @@
+<div>
+    <po-button
+        (p-click)="openFilter()"
+        p-icon="po-icon po-icon-filter"
+        p-label="Filtrar Tarefas">
+    </po-button>
+</div>
+
+<po-modal
+    p-click-out="true"
+    p-title="Filtro de Tarefas"
+    [p-primary-action]="poModalPrimaryAction"
+    [p-secondary-action]="poModalSecondaryAction">
+
+    <po-radio-group
+        name="Filtrar por"
+        p-auto-focus="true"
+        [p-options]="poRadioGroupOptions"
+        [p-columns]="pColumnsValue"
+        p-label="Filtrar por:"
+        (p-change)="changeFilterMethod($event)">
+    </po-radio-group>
+
+    <po-input *ngIf="radioOption == 'name'"
+        name="name-input"
+        p-placeholder="Digite o Nome da Tarefa"
+        (p-change-model)="changeValue($event)">
+    </po-input>
+
+    <po-select *ngIf="radioOption == 'category_id'"
+        name="category-input"
+        [p-options]="poSelectOptions"
+        p-placeholder="Selecione a Categoria..."
+        (p-change)="changeValue($event)">
+    </po-select>
+
+    <po-datepicker *ngIf="radioOption == 'date'"
+        p-placeholder="Data Limite"
+        (p-change)="changeDateValue($event)">
+    </po-datepicker>
+
+    <po-datepicker *ngIf="radioOption == 'concluded_in'"
+        p-placeholder="Data de Conclusão"
+        (p-change)="changeDateValue($event)">
+    </po-datepicker>
+
+</po-modal>

@@ -1,0 +1,13 @@
+<div class="po-wrapper">
+    <po-toolbar p-title="mySched.po"
+      [p-profile]="profile"
+      [p-profile-actions]="actions"></po-toolbar>
+  
+    <po-menu [p-menus]="menus"
+      p-logo="https://cdn.pixabay.com/photo/2017/01/31/20/40/calendar-2027122_960_720.png">
+    </po-menu>
+  
+    <po-page-default [p-title]="pageTitle">
+      <ng-template appHost></ng-template>
+    </po-page-default>
+</div>

@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@totvs.com.br",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "name": "Visitante",
+      "email": "visitante@totvs.com.br",
+      "password": "1234"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Trabalho"
+    },
+    {
+      "id": 2,
+      "name": "Casa"
+    }
+  ],
+  "tasks": []
+}

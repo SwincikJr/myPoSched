@@ -1,0 +1,12 @@
+<!--<p>login works!</p>
+<button type="button" (click)="login()">Login</button>
+https://cdn.pixabay.com/photo/2016/07/31/20/54/calendar-1559935_960_720.png
+-->
+
+<po-page-login
+    (p-login-submit)="login($event)"
+    p-login-pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+    p-product-name="mySched.po"
+    [p-loading]="isLoading"
+    [p-literals]="pLiterals"
+    p-logo="https://cdn.pixabay.com/photo/2017/01/31/20/40/calendar-2027122_960_720.png"></po-page-login>

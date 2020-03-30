@@ -1,0 +1,35 @@
+<div style="margin-bottom: 25px; padding: 10px;">
+    <div style="width: fit-content; float: left; margin-right: 15px;">
+        <app-new-task></app-new-task>
+    </div>
+    <div style="width: fit-content; float: left;">
+        <app-task-filter context="tasks"></app-task-filter>
+    </div>
+</div>
+
+<div>
+    <po-container *ngFor="let task of taskService.tasks">
+        <div [class]="checkExpiring(task)" (click)="clickedTask(task.id)">
+            <div class="grid-container task">
+                <div class="grid-item">{{task.name}}</div>
+                <div class="grid-item rigth-item">{{taskService.getFormatedDate(task.date)}}</div>
+            </div>
+        </div>
+    </po-container>
+</div>
+
+<po-modal
+    p-click-out="true"
+    p-hide-close="false"
+    [p-primary-action]="poModalAction"
+    [p-title]="taskTitle">
+
+    <div>
+        {{taskDescription}}
+    </div>
+
+    <div class="modal-task-date">
+        Data Limite: {{taskDate}}
+    </div>
+
+</po-modal>
