@@ -12,7 +12,7 @@
         <div [class]="checkExpiring(task)" (click)="clickedTask(task.id)">
             <div class="grid-container task">
                 <div class="grid-item">{{task.name}}</div>
-                <div class="grid-item rigth-item">{{taskService.getFormatedDate(task.date)}}</div>
+                <div class="grid-item rigth-item">{{dateService.convert(task.date, false)}}</div>
             </div>
         </div>
     </po-container>
@@ -22,14 +22,15 @@
     p-click-out="true"
     p-hide-close="false"
     [p-primary-action]="poModalAction"
+    [p-secondary-action]="poModalSecondaryAction"
     [p-title]="taskTitle">
 
     <div>
         {{taskDescription}}
     </div>
-
     <div class="modal-task-date">
         Data Limite: {{taskDate}}
     </div>
-
 </po-modal>
+
+<app-update-task (closed)="reopenModal()" (modified)="updateInfoCard($event)"></app-update-task>

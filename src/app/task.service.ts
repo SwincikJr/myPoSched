@@ -52,13 +52,15 @@ export class TaskService {
     })
   }
 
-  getFormatedDate(date) {
-    date = date.split('-')
-    return date[2] + '/' + date[1] + '/' + date[0]
-  }
-
   deleteTask(id, callback) {
     this.httpClient.delete(`http://localhost:3000/tasks/${id}`).subscribe(resp => {
+      callback();
+    })
+  }
+
+  updateTask(task, callback) {
+    task.user_id = parseInt(this.loginService.getUser_id().toString());
+    this.httpClient.put(`http://localhost:3000/tasks/${task.id}`, task).subscribe(resp => {
       callback();
     })
   }

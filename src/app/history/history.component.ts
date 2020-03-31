@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { CategoryService } from '../category.service';
 import { PoModalAction, PoModalComponent } from '@portinari/portinari-ui';
 import { TaskService } from '../task.service';
+import { DateService } from '../date.service';
 
 @Component({
   selector: 'app-history',
@@ -23,7 +24,7 @@ export class HistoryComponent implements OnInit {
     action: this.delete.bind(this)
   }
 
-  constructor(public categoryService: CategoryService, public taskService: TaskService) { }
+  constructor(public categoryService: CategoryService, public taskService: TaskService, public dateService: DateService) { }
 
   ngOnInit() {
     this.taskService.getHistory();
@@ -36,8 +37,8 @@ export class HistoryComponent implements OnInit {
 
     this.taskTitle = category + ": " + task.name;
     this.taskDescription = task.description;
-    this.taskDate = this.taskService.getFormatedDate(task.date);
-    this.concludedDate = this.taskService.getFormatedDate(task.concluded_in);
+    this.taskDate = this.dateService.convert(task.date, false);
+    this.concludedDate = this.dateService.convert(task.concluded_in, false);
     this.taskId = id;
     this.poModal.open();
 

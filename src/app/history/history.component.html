@@ -9,7 +9,7 @@
         <div (click)="clickedTask(task.id)">
             <div class="grid-container task">
                 <div class="grid-item">{{task.name}}</div>
-                <div class="grid-item rigth-item">Concluído em {{taskService.getFormatedDate(task.concluded_in)}}</div>
+                <div class="grid-item rigth-item">Concluído em {{dateService.convert(task.concluded_in, false)}}</div>
             </div>
         </div>
     </po-container>

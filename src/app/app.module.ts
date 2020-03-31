@@ -16,6 +16,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { HistoryComponent } from './history/history.component';
 import { TaskFilterComponent } from './task-filter/task-filter.component';
 import { NewTaskComponent } from './new-task/new-task.component';
+import { UpdateTaskComponent } from './update-task/update-task.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewTaskComponent } from './new-task/new-task.component';
     TasksComponent,
     HistoryComponent,
     TaskFilterComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    UpdateTaskComponent
   ],
   imports: [
     BrowserModule,

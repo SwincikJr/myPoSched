@@ -1,0 +1,13 @@
+<po-modal
+    p-click-out="true"
+    p-hide-close="false"
+    [p-primary-action]="poModalAction"
+    [p-secondary-action]="poModalSecondaryAction"
+    p-title="Modificar Tarefa">
+
+    <po-dynamic-form
+        [p-fields]="formFields"
+        [p-value]="task" >
+    </po-dynamic-form>
+
+</po-modal>
